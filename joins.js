@@ -6,13 +6,7 @@ if (config.pool && config.pool.max !== 0) {
 }
 
 function getPeople() {
-  knex('people')
-    .then(function(data){
-      console.log('\nthese are the people:\n', data)
-    })
-    .catch(function(err){
-      console.log(err)
-    })
+  return knex('people')
 }
 
 function getCats() {
