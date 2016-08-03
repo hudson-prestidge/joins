@@ -5,6 +5,17 @@ if (config.pool && config.pool.max !== 0) {
   this.initializePool(config);
 }
 
+knex('joins')
+  .then(function(data) {
+    console.log(data)
+  })
+  .catch(function(err){
+    console.log(err)
+  })
+  .finally(function() {
+    knex.destroy()
+  })
+
 function getPeople() {
   return knex('people')
 }
